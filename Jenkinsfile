@@ -1,10 +1,13 @@
 /* Requires the Docker Pipeline plugin */
 pipeline {
-    agent any
+    agent { docker { image 'node:20.9.0-alpine3.18' } }
     stages {
-        stage('Test') {
+        stage('Build Svelte App') {
             steps {
-                echo 'This is a test'
+                dir('hw5') {
+                    sh 'npm install'
+                    sh 'npm run build'
+                }
             }
         }
     }
