@@ -1,11 +1,10 @@
 /* Requires the Docker Pipeline plugin */
 pipeline {
-    agent { docker { image 'node' } }
+    agent any
     stages {
         stage('Build') {
             steps {
                 dir('hw5') {
-                    // Ensure Node.js and npm are installed on the agent
                     sh 'npm install'
                     sh 'npm run build'
                 }
