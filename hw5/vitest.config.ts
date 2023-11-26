@@ -1,6 +1,4 @@
-export default {
-    reporters: ['default', 'junit'],
-    junit: {
-        outputFile: './test-results.xml'
-    },
-}
+import { defineConfig } from 'vite'
+
+export default defineConfig({
+})
